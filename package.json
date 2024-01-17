@@ -1,0 +1,17 @@
+{
+  "name": "todo-list-api-fastify",
+  "version": "1.0.0",
+  "description": "walkthrough on the fastify framework instead of express",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon -q server.js"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.5.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.25.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.3"
+  }
+}
