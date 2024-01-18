@@ -4,7 +4,8 @@
   "description": "walkthrough on the fastify framework instead of express",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon -q server.js"
+    "dev": "nodemon -q server.js",
+    "start": "node server.js"
   },
   "dependencies": {
     "@fastify/cors": "^8.5.0",
