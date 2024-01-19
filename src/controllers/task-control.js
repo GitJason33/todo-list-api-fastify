@@ -10,8 +10,6 @@ class TaskController {
    * access: PRIVATE
    */
   static async getTodos(req, reply) {
-    console.log('GET /task/all');
-
     const todos = await TaskModel.findAllForUser(req.user['_id']);
 
     reply.send(todos);
@@ -25,8 +23,6 @@ class TaskController {
    * access: PUBLIC
    */
   static async getExamples(req, reply) {
-    console.log('GET /task/examples');
-
     const todos = await TaskModel.findExamples();
 
     reply.send(todos);
@@ -40,8 +36,6 @@ class TaskController {
    * access: PRIVATE
    */
   static async getTodo(req, reply) {
-    console.log('GET /task/:id');
-
     const todo_id = toInt(req.params.id);
     let user_id = req.user['_id'];
 
@@ -65,8 +59,6 @@ class TaskController {
    * access: PRIVATE
    */
   static async createTodo(req, reply) {
-    console.log('POST /task');
-
     const {title, description, priority, due_date} = req.body;
     TaskValidator.todoData({ title, priority });
 
@@ -91,8 +83,6 @@ class TaskController {
    * access: PRIVATE
    */
   static async markAsDone(req, reply) {
-    console.log('PUT /task/done/:id');
-
     const todo_id = toInt(req.params.id);
     await TaskModel.done({ id: todo_id, user_id: req.user['_id'] });
 
@@ -107,8 +97,6 @@ class TaskController {
    * access: PRIVATE
    */
   static async editTodo (req, reply) {
-    console.log('PUT /task/:id');
-
     const todo_id = toInt(req.params.id);
     const {title, description, priority, due_date} = req.body;
 
@@ -131,8 +119,6 @@ class TaskController {
    * access: PRIVATE
    */
   static async deleteTodo(req, reply) {
-    console.log('DELETE /task/:id');
-
     const todo_id = toInt(req.params.id);
     await TaskModel.deleteById({ id: todo_id, user_id: req.user['_id'] });
 

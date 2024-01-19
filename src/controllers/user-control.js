@@ -13,7 +13,6 @@ class UserController {
     const user = { ...req.user };
     delete user.password;
 
-    console.log('GET /user/info')
 
     reply.send(user);
   }
@@ -26,8 +25,6 @@ class UserController {
    * access: PUBLIC (with correct credentials)
    */
   static async loginUser(req, reply) {
-    console.log('POST /user/login')
-
     const { email, password } = req.body;
     UserValidator.loginData(req.body);
 
@@ -52,8 +49,6 @@ class UserController {
    * access: PUBLIC
    */
   static async registerUser(req, reply) {
-    console.log('POST /user/register')
-
     const { email } = req.body;
     UserValidator.registerData(req.body);
 
