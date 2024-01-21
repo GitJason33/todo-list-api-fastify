@@ -1,6 +1,6 @@
 {
   "name": "todo-list-api-fastify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "walkthrough on the fastify framework instead of express",
   "main": "server.js",
   "scripts": {

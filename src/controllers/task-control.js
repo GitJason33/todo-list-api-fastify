@@ -86,7 +86,7 @@ class TaskController {
     const todo_id = toInt(req.params.id);
     await TaskModel.done({ id: todo_id, user_id: req.user['_id'] });
 
-    reply.status(202).send("todo marked as done!");
+    reply.status(202).send({ msg: "todo marked as done!" });
   }
 
 
@@ -108,7 +108,7 @@ class TaskController {
     });
 
 
-    reply.code(202).send("updated!");
+    reply.code(202).send({ msg: "updated!" });
   }
 
 
@@ -122,7 +122,7 @@ class TaskController {
     const todo_id = toInt(req.params.id);
     await TaskModel.deleteById({ id: todo_id, user_id: req.user['_id'] });
 
-    reply.code(204).send("deleted!");
+    reply.code(204).send();
   }
 }
 

@@ -62,7 +62,7 @@ class UserController {
 
 
     const token = createJWToken(user['_id']);
-    reply.code(201).send({token, user});
+    reply.code(201).send({ token, user });
   }
 }
 
